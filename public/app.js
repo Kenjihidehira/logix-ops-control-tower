@@ -57,7 +57,7 @@ function renderMap(routes) {
 function renderRoutes(routes) {
   qs("#routeCount").textContent = `${routes.length} rotas em monitoramento`;
   qs("#routeBoard").innerHTML = routes.map((route) => `
-    <article class="route-card">
+    <article class="route-card ${route.riskLevel}">
       <header>
         <strong>${route.id} - ${route.zone}</strong>
         <span class="risk-pill ${riskClass(route.riskLevel)}">${route.riskScore}</span>
@@ -75,7 +75,7 @@ function renderRoutes(routes) {
 
 function renderExceptions(queue) {
   qs("#exceptionQueue").innerHTML = queue.slice(0, 7).map((item) => `
-    <article class="exception-item">
+    <article class="exception-item ${item.severity}">
       <header>
         <strong>${item.routeId}</strong>
         <span class="risk-pill risk-${item.severity === "critica" ? "critico" : item.severity === "alta" ? "alto" : "medio"}">${item.priorityScore}</span>
