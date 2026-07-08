@@ -1,0 +1,62 @@
+<svg width="1440" height="960" viewBox="0 0 1440 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1440" height="960" fill="#F4F7FB"/>
+  <rect width="258" height="960" fill="#111827"/>
+  <rect x="24" y="30" width="38" height="38" rx="8" fill="#84CC16"/>
+  <text x="34" y="55" fill="#163000" font-family="Arial" font-size="13" font-weight="900">LX</text>
+  <text x="74" y="57" fill="white" font-family="Arial" font-size="25" font-weight="800">LogixOps</text>
+  <rect x="18" y="112" width="222" height="48" rx="8" fill="#008F85"/>
+  <text x="44" y="143" fill="white" font-family="Arial" font-size="15" font-weight="700">Torre de controle</text>
+  <text x="44" y="205" fill="#CBD7E5" font-family="Arial" font-size="15" font-weight="700">Rotas</text>
+  <text x="44" y="260" fill="#CBD7E5" font-family="Arial" font-size="15" font-weight="700">Entregas</text>
+  <text x="44" y="315" fill="#CBD7E5" font-family="Arial" font-size="15" font-weight="700">Motoristas</text>
+  <text x="44" y="370" fill="#CBD7E5" font-family="Arial" font-size="15" font-weight="700">Incidentes</text>
+  <text x="286" y="58" fill="#152033" font-family="Arial" font-size="31" font-weight="800">Torre de controle logistica</text>
+  <text x="286" y="86" fill="#667085" font-family="Arial" font-size="16">Rotas, SLA, motoristas, handoff e excecoes em tempo operacional.</text>
+  <rect x="1050" y="28" width="112" height="44" rx="8" fill="white" stroke="#DCE4EC"/>
+  <text x="1076" y="56" fill="#152033" font-family="Arial" font-size="15" font-weight="700">Atualizar</text>
+  <rect x="1176" y="28" width="130" height="44" rx="8" fill="#84CC16"/>
+  <text x="1197" y="56" fill="#163000" font-family="Arial" font-size="15" font-weight="700">Otimizar rotas</text>
+  <rect x="286" y="118" width="253" height="112" rx="8" fill="white" stroke="#DCE4EC"/>
+  <circle cx="326" cy="161" r="24" fill="#008F85"/>
+  <text x="365" y="153" fill="#667085" font-family="Arial" font-size="14">No prazo</text>
+  <text x="365" y="185" fill="#152033" font-family="Arial" font-size="26" font-weight="800">57%</text>
+  <rect x="558" y="118" width="253" height="112" rx="8" fill="white" stroke="#DCE4EC"/>
+  <circle cx="598" cy="161" r="24" fill="#EF4444"/>
+  <text x="637" y="153" fill="#667085" font-family="Arial" font-size="14">Rotas em risco</text>
+  <text x="637" y="185" fill="#152033" font-family="Arial" font-size="26" font-weight="800">3</text>
+  <rect x="830" y="118" width="253" height="112" rx="8" fill="white" stroke="#DCE4EC"/>
+  <circle cx="870" cy="161" r="24" fill="#F59E0B"/>
+  <text x="909" y="153" fill="#667085" font-family="Arial" font-size="14">Excecoes abertas</text>
+  <text x="909" y="185" fill="#152033" font-family="Arial" font-size="26" font-weight="800">4</text>
+  <rect x="1102" y="118" width="282" height="112" rx="8" fill="white" stroke="#DCE4EC"/>
+  <circle cx="1142" cy="161" r="24" fill="#84CC16"/>
+  <text x="1181" y="153" fill="#667085" font-family="Arial" font-size="14">Capacidade media</text>
+  <text x="1181" y="185" fill="#152033" font-family="Arial" font-size="26" font-weight="800">83%</text>
+  <rect x="286" y="252" width="710" height="370" rx="8" fill="white" stroke="#DCE4EC"/>
+  <text x="310" y="294" fill="#152033" font-family="Arial" font-size="22" font-weight="800">Mapa operacional</text>
+  <rect x="310" y="326" width="662" height="270" rx="8" fill="#EEF7F6"/>
+  <path d="M380 420 L540 472 L700 395 L865 505" stroke="#008F85" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="380" cy="420" r="22" fill="#EF4444" stroke="white" stroke-width="4"/>
+  <circle cx="540" cy="472" r="22" fill="#F59E0B" stroke="white" stroke-width="4"/>
+  <circle cx="700" cy="395" r="22" fill="#334155" stroke="white" stroke-width="4"/>
+  <circle cx="865" cy="505" r="22" fill="#84CC16" stroke="white" stroke-width="4"/>
+  <rect x="1018" y="252" width="366" height="370" rx="8" fill="white" stroke="#DCE4EC"/>
+  <text x="1042" y="294" fill="#152033" font-family="Arial" font-size="22" font-weight="800">Fila de excecoes</text>
+  <rect x="1042" y="326" width="318" height="72" rx="8" fill="#FEF2F2" stroke="#FECACA"/>
+  <text x="1062" y="354" fill="#152033" font-family="Arial" font-size="15" font-weight="700">RTE-2410</text>
+  <text x="1062" y="378" fill="#667085" font-family="Arial" font-size="13">Duas tentativas falharam</text>
+  <rect x="1042" y="412" width="318" height="72" rx="8" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="1062" y="440" fill="#152033" font-family="Arial" font-size="15" font-weight="700">RTE-2411</text>
+  <text x="1062" y="464" fill="#667085" font-family="Arial" font-size="13">Handoff incompleto no dock</text>
+  <rect x="286" y="646" width="710" height="250" rx="8" fill="white" stroke="#DCE4EC"/>
+  <text x="310" y="688" fill="#152033" font-family="Arial" font-size="22" font-weight="800">Rotas ativas</text>
+  <rect x="310" y="720" width="204" height="126" rx="8" fill="#F8FAFC" stroke="#DCE4EC"/>
+  <text x="330" y="750" fill="#152033" font-family="Arial" font-size="15" font-weight="700">RTE-2410 - ABC</text>
+  <text x="330" y="776" fill="#667085" font-family="Arial" font-size="13">Igor Santos</text>
+  <rect x="330" y="806" width="160" height="8" rx="4" fill="#E5E7EB"/>
+  <rect x="330" y="806" width="70" height="8" rx="4" fill="#008F85"/>
+  <rect x="1018" y="646" width="366" height="250" rx="8" fill="white" stroke="#DCE4EC"/>
+  <text x="1042" y="688" fill="#152033" font-family="Arial" font-size="22" font-weight="800">Automacoes recomendadas</text>
+  <text x="1042" y="732" fill="#667085" font-family="Arial" font-size="14">Redistribuir parada critica</text>
+  <text x="1042" y="766" fill="#667085" font-family="Arial" font-size="14">Bloquear saida com handoff incompleto</text>
+</svg>
