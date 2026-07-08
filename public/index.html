@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LogixOps Control Tower</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="/" aria-label="LogixOps inicio">
+          <span class="brand-mark">LX</span>
+          <span>LogixOps</span>
+        </a>
+        <nav class="nav-list" aria-label="Principal">
+          <button class="nav-item active" type="button">Torre de controle</button>
+          <button class="nav-item" type="button">Rotas</button>
+          <button class="nav-item" type="button">Entregas</button>
+          <button class="nav-item" type="button">Motoristas</button>
+          <button class="nav-item" type="button">Incidentes</button>
+          <button class="nav-item" type="button">Automacoes</button>
+        </nav>
+        <div class="hub-card">
+          <strong>CD Sao Paulo Leste</strong>
+          <span>Operacao last-mile</span>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <h1>Torre de controle logistica</h1>
+            <p>Rotas, SLA, motoristas, handoff e excecoes em tempo operacional.</p>
+          </div>
+          <div class="topbar-actions">
+            <button id="refreshBtn" class="ghost-button" type="button">Atualizar</button>
+            <button id="optimizeBtn" class="primary-button" type="button">Otimizar rotas</button>
+            <button id="runAutomationBtn" class="dark-button" type="button">Rodar automacoes</button>
+          </div>
+        </header>
+
+        <section class="kpi-grid" aria-label="Indicadores da operacao">
+          <article class="kpi-card">
+            <span class="kpi-icon teal">✓</span>
+            <p>No prazo</p>
+            <strong id="onTimeRate">0%</strong>
+            <small id="stopProgress">0/0 paradas</small>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-icon red">!</span>
+            <p>Rotas em risco</p>
+            <strong id="atRiskRoutes">0</strong>
+            <small>SLA ou capacidade</small>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-icon amber">⧉</span>
+            <p>Excecoes abertas</p>
+            <strong id="openIncidents">0</strong>
+            <small id="pendingHandoffs">0 handoffs pendentes</small>
+          </article>
+          <article class="kpi-card">
+            <span class="kpi-icon lime">▣</span>
+            <p>Capacidade media</p>
+            <strong id="capacityPressure">0%</strong>
+            <small id="failedAttempts">0 falhas</small>
+          </article>
+        </section>
+
+        <section class="control-grid">
+          <section class="panel map-panel" aria-labelledby="mapTitle">
+            <div class="panel-header">
+              <div>
+                <h2 id="mapTitle">Mapa operacional</h2>
+                <p>Canvas simulado com rotas, atrasos e paradas criticas.</p>
+              </div>
+              <span id="optimizationLog" class="status-chip">Operacao monitorada</span>
+            </div>
+            <div id="routeCanvas" class="route-canvas"></div>
+          </section>
+
+          <aside class="panel exception-panel" aria-labelledby="exceptionTitle">
+            <div class="panel-header compact">
+              <div>
+                <h2 id="exceptionTitle">Fila de excecoes</h2>
+                <p>Prioridade combinando SLA, severidade e handoff.</p>
+              </div>
+            </div>
+            <div id="exceptionQueue" class="exception-list"></div>
+          </aside>
+
+          <section class="panel route-panel" aria-labelledby="routeTitle">
+            <div class="panel-header">
+              <div>
+                <h2 id="routeTitle">Rotas ativas</h2>
+                <p id="routeCount">Carregando rotas...</p>
+              </div>
+            </div>
+            <div id="routeBoard" class="route-board"></div>
+          </section>
+
+          <aside class="panel automation-panel" aria-labelledby="automationTitle">
+            <div class="panel-header compact">
+              <div>
+                <h2 id="automationTitle">Automacoes recomendadas</h2>
+                <p>Simulacao de acoes em WMS, dispatch e cliente.</p>
+              </div>
+            </div>
+            <div id="automationList" class="automation-list"></div>
+            <div id="automationLog" class="automation-log" aria-live="polite"></div>
+          </aside>
+        </section>
+
+        <section class="panel delivery-panel" aria-labelledby="deliveryTitle">
+          <div class="panel-header table-header">
+            <div>
+              <h2 id="deliveryTitle">Entregas monitoradas</h2>
+              <p id="deliveryCount">Carregando entregas...</p>
+            </div>
+            <div class="filters">
+              <input id="searchInput" type="search" placeholder="Buscar cliente ou entrega">
+              <select id="statusFilter" aria-label="Filtrar status">
+                <option value="all">Todos os status</option>
+                <option value="risco_sla">Risco SLA</option>
+                <option value="falha">Falha</option>
+                <option value="sem_motorista">Sem motorista</option>
+                <option value="em_rota">Em rota</option>
+                <option value="entregue">Entregue</option>
+              </select>
+              <select id="priorityFilter" aria-label="Filtrar prioridade">
+                <option value="all">Todas prioridades</option>
+                <option value="critica">Critica</option>
+                <option value="alta">Alta</option>
+                <option value="media">Media</option>
+                <option value="baixa">Baixa</option>
+              </select>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Entrega / cliente</th>
+                  <th>Rota</th>
+                  <th>Janela</th>
+                  <th>Pacotes</th>
+                  <th>Prioridade</th>
+                  <th>Status</th>
+                  <th>Tentativas</th>
+                </tr>
+              </thead>
+              <tbody id="deliveryBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
