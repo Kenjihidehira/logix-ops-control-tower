@@ -1,0 +1,25 @@
+{
+  "name": "logix-ops-control-tower",
+  "version": "1.0.0",
+  "description": "Torre de controle logistica para rotas last-mile, SLA, motoristas, incidentes e automacoes operacionais.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/*.test.js",
+    "smoke": "node tests/smoke.js",
+    "validate": "node --test tests/*.test.js && node tests/smoke.js"
+  },
+  "keywords": [
+    "logistica",
+    "last-mile",
+    "dashboard",
+    "dispatch",
+    "sla",
+    "operacoes",
+    "nodejs",
+    "portfolio"
+  ],
+  "author": "Wesley Kenji Ito Hidehira",
+  "license": "MIT"
+}
