@@ -60,14 +60,14 @@ function serveStatic(req, res) {
 
   if (!filePath.startsWith(publicDir)) {
     res.writeHead(403);
-    res.end("Forbidden");
+    res.end("Proibido");
     return;
   }
 
   fs.readFile(filePath, (error, content) => {
     if (error) {
       res.writeHead(404);
-      res.end("Not found");
+      res.end("Nao encontrado");
       return;
     }
 
