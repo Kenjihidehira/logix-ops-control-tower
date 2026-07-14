@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>LogixOps Control Tower</title>
+    <title>LogixOps - Torre de Controle</title>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
@@ -19,28 +19,28 @@
           <button class="nav-item" type="button">Entregas</button>
           <button class="nav-item" type="button">Motoristas</button>
           <button class="nav-item" type="button">Incidentes</button>
-          <button class="nav-item" type="button">Automacoes</button>
+          <button class="nav-item" type="button">Automações</button>
         </nav>
         <div class="hub-card">
-          <strong>CD Sao Paulo Leste</strong>
-          <span>Operacao last-mile</span>
+          <strong>CD São Paulo Leste</strong>
+          <span>Operação de última milha</span>
         </div>
       </aside>
 
       <main class="workspace">
         <header class="topbar">
           <div>
-            <h1>Torre de controle logistica</h1>
-            <p>Rotas, SLA, motoristas, handoff e excecoes em tempo operacional.</p>
+            <h1>Torre de controle logística</h1>
+            <p>Rotas, SLA, motoristas, transferências e exceções em tempo operacional.</p>
           </div>
           <div class="topbar-actions">
             <button id="refreshBtn" class="ghost-button" type="button">Atualizar</button>
             <button id="optimizeBtn" class="primary-button" type="button">Otimizar rotas</button>
-            <button id="runAutomationBtn" class="dark-button" type="button">Rodar automacoes</button>
+            <button id="runAutomationBtn" class="dark-button" type="button">Rodar automações</button>
           </div>
         </header>
 
-        <section class="kpi-grid" aria-label="Indicadores da operacao">
+        <section class="kpi-grid" aria-label="Indicadores da operação">
           <article class="kpi-card">
             <span class="kpi-icon teal">OK</span>
             <p>No prazo</p>
@@ -55,9 +55,9 @@
           </article>
           <article class="kpi-card">
             <span class="kpi-icon amber">SLA</span>
-            <p>Excecoes abertas</p>
+            <p>Exceções abertas</p>
             <strong id="openIncidents">0</strong>
-            <small id="pendingHandoffs">0 handoffs pendentes</small>
+            <small id="pendingHandoffs">0 transferências pendentes</small>
           </article>
           <article class="kpi-card">
             <span class="kpi-icon lime">%</span>
@@ -74,7 +74,7 @@
                 <h2 id="mapTitle">Mapa operacional</h2>
                 <p>Canvas simulado com rotas, atrasos e paradas criticas.</p>
               </div>
-              <span id="optimizationLog" class="status-chip">Operacao monitorada</span>
+              <span id="optimizationLog" class="status-chip">Operação monitorada</span>
             </div>
             <div id="routeCanvas" class="route-canvas"></div>
           </section>
@@ -82,8 +82,8 @@
           <aside class="panel exception-panel" aria-labelledby="exceptionTitle">
             <div class="panel-header compact">
               <div>
-                <h2 id="exceptionTitle">Fila de excecoes</h2>
-                <p>Prioridade combinando SLA, severidade e handoff.</p>
+                <h2 id="exceptionTitle">Fila de exceções</h2>
+                <p>Prioridade combinando SLA, severidade e transferência.</p>
               </div>
             </div>
             <div id="exceptionQueue" class="exception-list"></div>
@@ -102,8 +102,8 @@
           <aside class="panel automation-panel" aria-labelledby="automationTitle">
             <div class="panel-header compact">
               <div>
-                <h2 id="automationTitle">Automacoes recomendadas</h2>
-                <p>Simulacao de acoes em WMS, dispatch e cliente.</p>
+                <h2 id="automationTitle">Automações recomendadas</h2>
+                <p>Simulação de ações em WMS, despacho e cliente.</p>
               </div>
             </div>
             <div id="automationList" class="automation-list"></div>
@@ -129,7 +129,7 @@
               </select>
               <select id="priorityFilter" aria-label="Filtrar prioridade">
                 <option value="all">Todas prioridades</option>
-                <option value="critica">Critica</option>
+                <option value="critica">Crítica</option>
                 <option value="alta">Alta</option>
                 <option value="media">Media</option>
                 <option value="baixa">Baixa</option>

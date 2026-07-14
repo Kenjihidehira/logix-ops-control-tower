@@ -1,7 +1,7 @@
 {
   "name": "logix-ops-control-tower",
   "version": "1.0.0",
-  "description": "Torre de controle logistica para rotas last-mile, SLA, motoristas, incidentes e automacoes operacionais.",
+  "description": "Torre de controle logística para rotas de última milha, SLA, motoristas, incidentes e automações operacionais.",
   "type": "module",
   "main": "src/server.js",
   "scripts": {

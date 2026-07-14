@@ -24,7 +24,7 @@ try {
   assert.equal(health.ok, true);
 
   const html = await fetch(baseUrl).then((response) => response.text());
-  assert.ok(html.includes("LogixOps Control Tower"));
+  assert.ok(html.includes("LogixOps - Torre de Controle"));
   assert.ok(html.includes("Otimizar rotas"));
 
   const routes = await fetch(`${baseUrl}/api/routes`).then((response) => response.json());
@@ -33,7 +33,7 @@ try {
   const exceptions = await fetch(`${baseUrl}/api/exceptions`).then((response) => response.json());
   assert.ok(exceptions.queue.length >= 6);
 
-  console.log("Smoke test OK: app, API, rotas e excecoes respondem corretamente.");
+  console.log("Smoke test OK: app, API, rotas e exceções respondem corretamente.");
 } finally {
   await new Promise((resolve) => server.close(resolve));
 }

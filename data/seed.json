@@ -2,14 +2,14 @@
   "operationDate": "2026-07-08",
   "company": {
     "name": "LogixOps",
-    "hub": "CD Sao Paulo Leste",
+    "hub": "CD São Paulo Leste",
     "segment": "Last-mile urbano"
   },
   "drivers": [
     { "id": "DRV-01", "name": "Marcos Lima", "vehicle": "Van VUC", "zone": "Zona Leste", "capacity": 42, "used": 36, "status": "em_rota", "rating": 4.8 },
     { "id": "DRV-02", "name": "Bruna Rocha", "vehicle": "Moto bau", "zone": "Centro", "capacity": 18, "used": 14, "status": "em_rota", "rating": 4.6 },
     { "id": "DRV-03", "name": "Igor Santos", "vehicle": "Van leve", "zone": "ABC", "capacity": 34, "used": 31, "status": "risco", "rating": 4.4 },
-    { "id": "DRV-04", "name": "Nadia Alves", "vehicle": "Carro utilitario", "zone": "Zona Norte", "capacity": 26, "used": 20, "status": "disponivel", "rating": 4.9 },
+    { "id": "DRV-04", "name": "Nadia Alves", "vehicle": "Carro utilitário", "zone": "Zona Norte", "capacity": 26, "used": 20, "status": "disponivel", "rating": 4.9 },
     { "id": "DRV-05", "name": "Rafael Costa", "vehicle": "Van VUC", "zone": "Guarulhos", "capacity": 40, "used": 27, "status": "em_rota", "rating": 4.7 }
   ],
   "routes": [
@@ -21,21 +21,21 @@
   ],
   "deliveries": [
     { "id": "DEL-10031", "routeId": "RTE-2408", "customer": "Mercado Bela Vista", "window": "13:00-15:00", "priority": "alta", "status": "em_rota", "attempts": 0, "packages": 4, "lat": 67, "lng": 34 },
-    { "id": "DEL-10032", "routeId": "RTE-2408", "customer": "Condominio Safira", "window": "14:00-16:00", "priority": "media", "status": "pendente", "attempts": 0, "packages": 2, "lat": 61, "lng": 48 },
+    { "id": "DEL-10032", "routeId": "RTE-2408", "customer": "Condomínio Safira", "window": "14:00-16:00", "priority": "media", "status": "pendente", "attempts": 0, "packages": 2, "lat": 61, "lng": 48 },
     { "id": "DEL-10041", "routeId": "RTE-2409", "customer": "Loja Central 88", "window": "12:00-14:00", "priority": "baixa", "status": "entregue", "attempts": 0, "packages": 1, "lat": 43, "lng": 44 },
-    { "id": "DEL-10052", "routeId": "RTE-2410", "customer": "Clinica Nova Saude", "window": "13:30-14:30", "priority": "critica", "status": "risco_sla", "attempts": 1, "packages": 6, "lat": 76, "lng": 70 },
+    { "id": "DEL-10052", "routeId": "RTE-2410", "customer": "Clínica Nova Saúde", "window": "13:30-14:30", "priority": "critica", "status": "risco_sla", "attempts": 1, "packages": 6, "lat": 76, "lng": 70 },
     { "id": "DEL-10053", "routeId": "RTE-2410", "customer": "Lab ABC", "window": "14:00-16:00", "priority": "alta", "status": "falha", "attempts": 2, "packages": 3, "lat": 80, "lng": 77 },
     { "id": "DEL-10061", "routeId": "RTE-2411", "customer": "Shopping Norte Box 12", "window": "15:00-17:00", "priority": "alta", "status": "pendente", "attempts": 0, "packages": 5, "lat": 33, "lng": 22 },
     { "id": "DEL-10062", "routeId": "RTE-2411", "customer": "Residencial Mirante", "window": "14:00-15:00", "priority": "critica", "status": "risco_sla", "attempts": 0, "packages": 2, "lat": 28, "lng": 18 },
-    { "id": "DEL-10071", "routeId": "RTE-2412", "customer": "Auto Pecas Dutra", "window": "13:00-16:00", "priority": "media", "status": "em_rota", "attempts": 0, "packages": 7, "lat": 51, "lng": 17 },
-    { "id": "DEL-10072", "routeId": "RTE-2412", "customer": "Farmacia Guarulhos", "window": "12:30-14:30", "priority": "alta", "status": "entregue", "attempts": 0, "packages": 2, "lat": 56, "lng": 24 },
+    { "id": "DEL-10071", "routeId": "RTE-2412", "customer": "Auto Peças Dutra", "window": "13:00-16:00", "priority": "media", "status": "em_rota", "attempts": 0, "packages": 7, "lat": 51, "lng": 17 },
+    { "id": "DEL-10072", "routeId": "RTE-2412", "customer": "Farmácia Guarulhos", "window": "12:30-14:30", "priority": "alta", "status": "entregue", "attempts": 0, "packages": 2, "lat": 56, "lng": 24 },
     { "id": "DEL-10080", "routeId": "BACKLOG", "customer": "Cliente sem rota - Vila Alpina", "window": "16:00-18:00", "priority": "critica", "status": "sem_motorista", "attempts": 0, "packages": 8, "lat": 71, "lng": 42 }
   ],
   "incidents": [
     { "id": "INC-9001", "routeId": "RTE-2408", "type": "transito", "severity": "media", "message": "Corredor com lentidao acima de 25 min.", "openedAt": "10:42" },
-    { "id": "INC-9002", "routeId": "RTE-2410", "type": "capacidade", "severity": "alta", "message": "Rota ABC com ocupacao acima de 90%.", "openedAt": "10:55" },
+    { "id": "INC-9002", "routeId": "RTE-2410", "type": "capacidade", "severity": "alta", "message": "Rota ABC com ocupação acima de 90%.", "openedAt": "10:55" },
     { "id": "INC-9003", "routeId": "RTE-2411", "type": "handoff", "severity": "alta", "message": "Separacao de pacotes incompleta no dock 3.", "openedAt": "11:08" },
-    { "id": "INC-9004", "routeId": "RTE-2410", "type": "falha_entrega", "severity": "critica", "message": "Duas tentativas falharam em entrega prioritaria.", "openedAt": "11:23" }
+    { "id": "INC-9004", "routeId": "RTE-2410", "type": "falha_entrega", "severity": "critica", "message": "Duas tentativas falharam em entrega prioritária.", "openedAt": "11:23" }
   ],
   "inventoryHandoffs": [
     { "sku": "KIT-FARMA-12", "dock": "D3", "routeId": "RTE-2411", "required": 14, "scanned": 9, "status": "pendente" },
@@ -45,8 +45,8 @@
   ],
   "automationRules": [
     { "id": "AUTO-ETA", "name": "Recalcular ETA e avisar cliente", "trigger": "risco_sla", "channel": "SMS/WhatsApp" },
-    { "id": "AUTO-REALLOCATE", "name": "Redistribuir parada critica", "trigger": "capacidade_alta", "channel": "Dispatch" },
+    { "id": "AUTO-REALLOCATE", "name": "Redistribuir parada crítica", "trigger": "capacidade_alta", "channel": "Despacho" },
     { "id": "AUTO-DOCK", "name": "Bloquear saida com handoff incompleto", "trigger": "handoff_pendente", "channel": "WMS" },
-    { "id": "AUTO-FAIL", "name": "Abrir tarefa de segunda tentativa", "trigger": "falha_entrega", "channel": "Backoffice" }
+    { "id": "AUTO-FAIL", "name": "Abrir tarefa de segunda tentativa", "trigger": "falha_entrega", "channel": "Retaguarda" }
   ]
 }

@@ -67,7 +67,7 @@ function serveStatic(req, res) {
   fs.readFile(filePath, (error, content) => {
     if (error) {
       res.writeHead(404);
-      res.end("Nao encontrado");
+      res.end("Não encontrado");
       return;
     }
 
@@ -123,7 +123,7 @@ export function createServer() {
       }
 
       if (url.pathname.startsWith("/api/")) {
-        return sendJson(res, 404, { error: "Endpoint nao encontrado" });
+        return sendJson(res, 404, { error: "Endpoint não encontrado" });
       }
 
       return serveStatic(req, res);

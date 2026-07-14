@@ -51,7 +51,7 @@ test("POST /api/optimize simula melhoria de rota", async () => {
   });
 });
 
-test("POST /api/automations/run simula acoes operacionais", async () => {
+test("POST /api/automations/run simula ações operacionais", async () => {
   await withServer(async (baseUrl) => {
     const response = await fetch(`${baseUrl}/api/automations/run`, {
       method: "POST",

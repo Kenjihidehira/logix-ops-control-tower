@@ -95,7 +95,7 @@ export function buildExceptionQueue(data) {
       severity: incident.severity,
       routeId: incident.routeId,
       title: incident.message,
-      owner: route?.driver?.name || "Operacao",
+      owner: route?.driver?.name || "Operação",
       priorityScore: (route?.riskScore || 30) + (incident.severity === "critica" ? 20 : incident.severity === "alta" ? 12 : 4)
     };
   });
@@ -149,12 +149,13 @@ export function buildAutomationSuggestions(data) {
 }
 
 export function filterDeliveries(data, { route = "all", status = "all", priority = "all", search = "" } = {}) {
-  const normalized = search.trim().toLowerCase();
+  const normalizeText = (value) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  const normalized = normalizeText(search.trim());
   return data.deliveries.filter((delivery) => {
     const matchesRoute = route === "all" || delivery.routeId === route;
     const matchesStatus = status === "all" || delivery.status === status;
     const matchesPriority = priority === "all" || delivery.priority === priority;
-    const matchesSearch = !normalized || `${delivery.id} ${delivery.customer} ${delivery.window}`.toLowerCase().includes(normalized);
+    const matchesSearch = !normalized || normalizeText(`${delivery.id} ${delivery.customer} ${delivery.window}`).includes(normalized);
     return matchesRoute && matchesStatus && matchesPriority && matchesSearch;
   });
 }

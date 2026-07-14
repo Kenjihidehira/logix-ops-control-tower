@@ -14,7 +14,7 @@ import {
 
 const data = loadData();
 
-test("calcula pressao de capacidade do motorista", () => {
+test("calcula pressão de capacidade do motorista", () => {
   const driver = data.drivers.find((item) => item.id === "DRV-03");
   assert.equal(calculateCapacityPressure(driver), 91);
 });
@@ -37,14 +37,14 @@ test("resumo operacional consolida SLA, falhas e handoffs", () => {
   assert.ok(summary.atRiskRoutes >= 2);
 });
 
-test("fila de excecoes prioriza eventos criticos", () => {
+test("fila de exceções prioriza eventos críticos", () => {
   const queue = buildExceptionQueue(data);
 
   assert.equal(queue[0].severity, "critica");
   assert.ok(queue[0].priorityScore > queue.at(-1).priorityScore);
 });
 
-test("sugestoes de automacao conectam excecoes a regras", () => {
+test("sugestões de automação conectam exceções a regras", () => {
   const suggestions = buildAutomationSuggestions(data);
 
   assert.ok(suggestions.length >= 4);
@@ -62,7 +62,7 @@ test("filtro de entregas combina status, prioridade e busca", () => {
   assert.equal(deliveries[0].id, "DEL-10052");
 });
 
-test("simulacao de otimizacao recomenda redistribuicao", () => {
+test("simulação de otimização recomenda redistribuição", () => {
   const result = simulateOptimization(data);
 
   assert.equal(result.applied, true);
@@ -70,7 +70,7 @@ test("simulacao de otimizacao recomenda redistribuicao", () => {
   assert.ok(result.message.includes("reduz risco"));
 });
 
-test("batch de automacoes limita a quantidade enviada", () => {
+test("lote de automações limita a quantidade enviada", () => {
   const result = applyAutomationBatch(data, 2);
 
   assert.equal(result.sent, 2);

@@ -30,12 +30,21 @@ function statusLabel(status) {
   }[status] || status;
 }
 
+function priorityLabel(priority) {
+  return {
+    critica: "Crítica",
+    alta: "Alta",
+    media: "Média",
+    baixa: "Baixa"
+  }[priority] || priority;
+}
+
 function renderSummary(summary) {
   qs("#onTimeRate").textContent = `${summary.onTimeRate}%`;
   qs("#stopProgress").textContent = `${summary.completedStops}/${summary.totalStops} paradas`;
   qs("#atRiskRoutes").textContent = summary.atRiskRoutes;
   qs("#openIncidents").textContent = summary.openIncidents;
-  qs("#pendingHandoffs").textContent = `${summary.pendingHandoffs} handoffs pendentes`;
+  qs("#pendingHandoffs").textContent = `${summary.pendingHandoffs} transferências pendentes`;
   qs("#capacityPressure").textContent = `${summary.avgCapacityPressure}%`;
   qs("#failedAttempts").textContent = `${summary.failedAttempts} falhas`;
 }
@@ -106,7 +115,7 @@ function renderDeliveries(payload) {
       <td>${delivery.routeId}</td>
       <td>${delivery.window}</td>
       <td>${delivery.packages}</td>
-      <td><span class="tag">${delivery.priority}</span></td>
+      <td><span class="tag">${priorityLabel(delivery.priority)}</span></td>
       <td><span class="risk-pill ${delivery.status === "falha" || delivery.status === "risco_sla" ? "risk-critico" : "risk-baixo"}">${statusLabel(delivery.status)}</span></td>
       <td>${delivery.attempts}</td>
     </tr>
@@ -149,7 +158,7 @@ async function runAutomations() {
   });
 
   state.automationRuns += result.sent;
-  qs("#automationLog").textContent = `${result.sent} acoes simuladas. Total nesta sessao: ${state.automationRuns}.`;
+  qs("#automationLog").textContent = `${result.sent} ações simuladas. Total nesta sessão: ${state.automationRuns}.`;
 }
 
 function bindEvents() {

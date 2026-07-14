@@ -1,43 +1,43 @@
-# LogixOps Control Tower
+# LogixOps - Torre de Controle
 
-Torre de controle logistica para operacoes last-mile: rotas, entregas, motoristas, SLA, handoff de estoque, incidentes e automacoes operacionais.
+Torre de controle logística para operações de última milha: rotas, entregas, motoristas, SLA, transferência de estoque, incidentes e automações operacionais.
 
-Este projeto foi criado para portfolio comercial. A ideia e demonstrar capacidade de construir um sistema de operacao real, com regras de negocio, API, dashboard, simulacoes e dados de exemplo. Nao e um CRUD simples.
+Este projeto foi criado para portfólio comercial. A ideia é demonstrar capacidade de construir um sistema de operação real, com regras de negócio, API, painel, simulações e dados de exemplo. Não é um CRUD simples.
 
 ## Valor comercial
 
-Empresas de entrega, e-commerce, assistencias tecnicas, distribuidoras e operadores locais precisam reagir rapido a atrasos, falhas de entrega, motoristas sobrecarregados e divergencias de separacao. O LogixOps centraliza:
+Empresas de entrega, e-commerce, assistências técnicas, distribuidoras e operadores locais precisam reagir rápido a atrasos, falhas de entrega, motoristas sobrecarregados e divergências de separação. O LogixOps centraliza:
 
-- rotas ativas com score de risco;
+- rotas ativas com pontuação de risco;
 - SLA por ETA, incidentes, capacidade e tentativas;
 - entregas criticas sem motorista ou com risco de atraso;
-- handoff de estoque por dock;
-- fila de excecoes priorizada;
-- sugestoes de automacao para dispatch, WMS, cliente e backoffice.
+- transferência de estoque por doca;
+- fila de exceções priorizada;
+- sugestões de automação para despacho, WMS, cliente e retaguarda.
 
-## Preview
+## Prévia
 
-![Preview do dashboard](docs/dashboard-preview.svg)
+![Prévia do painel](docs/dashboard-preview.svg)
 
 ## Funcionalidades
 
-- Dashboard responsivo com KPIs operacionais.
+- Painel responsivo com KPIs operacionais.
 - Canvas visual de rotas e risco.
 - Quadro de rotas com progresso, ETA, capacidade e motorista.
-- Fila de excecoes com prioridade combinada.
+- Fila de exceções com prioridade combinada.
 - Tabela de entregas com busca e filtros por status/prioridade.
-- Simulacao de otimizacao de rota.
-- Simulacao de automacoes operacionais.
+- Simulação de otimização de rota.
+- Simulação de automações operacionais.
 - API REST com Node.js nativo.
 - Testes unitarios e testes de API com `node:test`.
-- Dockerfile e instrucoes de deploy.
+- Dockerfile e instruções de publicação.
 
 ## Stack
 
 - Node.js nativo
 - HTML, CSS e JavaScript puro
 - `node:test`
-- JSON seed
+- Dados JSON de exemplo
 - Docker
 
 ## Como rodar
@@ -54,7 +54,7 @@ Acesse:
 http://localhost:3000
 ```
 
-## Validacao
+## Validação
 
 ```bash
 npm test
@@ -71,15 +71,15 @@ npm run validate
 
 ### `GET /api/health`
 
-Status do servico.
+Status do serviço.
 
 ### `GET /api/summary`
 
-KPIs de operacao: taxa no prazo, rotas ativas, rotas em risco, falhas, entregas sem motorista, incidentes e handoffs pendentes.
+KPIs de operação: taxa no prazo, rotas ativas, rotas em risco, falhas, entregas sem motorista, incidentes e transferências pendentes.
 
 ### `GET /api/routes`
 
-Rotas enriquecidas com motorista, progresso, pressao de capacidade, score de SLA e entregas vinculadas.
+Rotas enriquecidas com motorista, progresso, pressão de capacidade, pontuação de SLA e entregas vinculadas.
 
 ### `GET /api/deliveries`
 
@@ -91,19 +91,19 @@ Lista entregas com filtros:
 
 ### `GET /api/exceptions`
 
-Fila de excecoes priorizada por risco operacional.
+Fila de exceções priorizada por risco operacional.
 
 ### `GET /api/automations`
 
-Regras e sugestoes de automacao.
+Regras e sugestões de automação.
 
 ### `POST /api/optimize`
 
-Simula uma redistribuicao de entrega critica para reduzir risco de rota.
+Simula uma redistribuição de entrega crítica para reduzir risco de rota.
 
 ### `POST /api/automations/run`
 
-Simula execucao de automacoes.
+Simula execução de automações.
 
 Body:
 
@@ -113,7 +113,7 @@ Body:
 }
 ```
 
-## Deploy
+## Publicação
 
 ### Docker
 
@@ -124,27 +124,27 @@ docker run -p 3000:3000 logix-ops-control-tower
 
 ### Render, Railway, Fly.io ou similar
 
-- Start command: `node src/server.js`
+- Comando de inicialização: `node src/server.js`
 - Porta: usar a variavel `PORT` fornecida pela plataforma.
 - O Dockerfile tambem pode ser usado diretamente.
 
-Deploy real nao foi incluido porque depende de conta/credencial configurada na plataforma escolhida.
+A publicação real não foi incluída porque depende de conta ou credencial configurada na plataforma escolhida.
 
-## Melhorias possiveis
+## Melhorias possíveis
 
 - Persistencia em Postgres.
 - WebSocket para atualizacao em tempo real.
-- Integracao real com roteirizador.
-- Integracao com WMS/TMS.
+- Integração real com roteirizador.
+- Integração com WMS/TMS.
 - Controle de permissoes por perfil.
-- Historico de incidentes e auditoria.
-- Exportacao CSV/PDF para operacao.
-- Notificacoes reais por WhatsApp, SMS ou email.
+- Histórico de incidentes e auditoria.
+- Exportação CSV/PDF para operação.
+- Notificações reais por WhatsApp, SMS ou email.
 
-## Diferenciais para portfolio
+## Diferenciais para portfólio
 
-- Resolve uma dor operacional plausivel e vendavel.
-- Tem varias entidades de negocio conectadas.
-- Mostra regras de risco, simulacao de otimizacao e automacao.
-- Inclui API, frontend, seed, testes e Docker.
+- Resolve uma dor operacional plausível e vendável.
+- Tem várias entidades de negócio conectadas.
+- Mostra regras de risco, simulação de otimização e automação.
+- Inclui API, interface, dados de exemplo, testes e Docker.
 - E facil de explicar em proposta freelance como MVP para controle logistico.
