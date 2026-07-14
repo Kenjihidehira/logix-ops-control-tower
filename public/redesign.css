@@ -1,0 +1,45 @@
+:root { color-scheme: dark; }
+body { background: #07111c; color: #e6f1f4; font-family: "Arial Narrow", "Segoe UI", sans-serif; }
+.app-shell { display: grid; grid-template-columns: 238px minmax(0, 1fr); min-height: 100vh; }
+.sidebar { position: sticky; top: 0; width: auto; height: 100vh; padding: 24px 16px; background: #0b1d2b; border-right: 1px solid #2f5265; }
+.brand { color: #e6f1f4; font-size: 23px; text-transform: uppercase; }
+.brand-mark { border-radius: 2px; background: #b8f34a; color: #07111c; }
+.nav-item { border-radius: 2px; color: #9fb7c3; background: transparent; border: 1px solid transparent; text-align: left; }
+.nav-item:hover, .nav-item.active { background: #102d3b; border-color: #3b7080; color: #b8f34a; box-shadow: inset 3px 0 #b8f34a; }
+.hub-card { border-radius: 2px; border: 1px solid #3b7080; background: #07111c; }
+.workspace { min-width: 0; margin: 0; padding: 24px 28px 44px; }
+.topbar { border-bottom: 1px solid #2f5265; padding-bottom: 18px; }
+.topbar h1 { color: #fff; font-size: clamp(30px, 4vw, 48px); text-transform: uppercase; }
+.topbar p { color: #8fa9b5; }
+.ghost-button, .primary-button, .dark-button { border-radius: 2px; border: 1px solid #3b7080; }
+.ghost-button { background: transparent; color: #d9e8ed; }
+.primary-button { background: #b8f34a; color: #07111c; }
+.dark-button { background: #16a6a1; color: #041011; }
+.kpi-grid { gap: 8px; }
+.kpi-card { border-radius: 2px; border: 1px solid #2f5265; background: #0b1d2b; box-shadow: none; }
+.kpi-card strong { color: #fff; font-family: Consolas, monospace; }
+.kpi-icon { border-radius: 2px; background: #102d3b !important; color: #b8f34a !important; }
+.control-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; }
+.panel { border: 1px solid #2f5265; border-radius: 2px; background: #0b1d2b; box-shadow: none; }
+.panel-header { border-bottom: 1px solid #2f5265; background: #102432; }
+.panel-header h2 { color: #f2f8fa; }
+.panel-header p { color: #8fa9b5; }
+.map-panel { grid-column: span 8; }
+.exception-panel { grid-column: span 4; }
+.route-panel { grid-column: span 7; }
+.automation-panel { grid-column: span 5; }
+.delivery-panel { grid-column: 1 / -1; }
+.route-canvas { background-color: #061520; border: 1px solid #2f5265; }
+.status-chip { border-radius: 2px; background: #173846; color: #b8f34a; }
+.exception-list > *, .automation-list > *, .delivery-panel table { border-color: #2f5265; }
+@media (max-width: 1040px) {
+  .app-shell { display: block; }
+  .sidebar { position: static; height: auto; }
+  .nav-list { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .control-grid { grid-template-columns: 1fr; }
+  .map-panel, .exception-panel, .route-panel, .automation-panel, .delivery-panel { grid-column: auto; }
+}
+@media (max-width: 640px) {
+  .workspace { padding: 18px 12px 34px; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+}
